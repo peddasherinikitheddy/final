@@ -1,0 +1,367 @@
+<div class="container theme-plum">
+  <h1>Accessible(?) and responsive tabs (tabgroups). Html and Css only</h1>
+  <h2>Themed: theme-plum</h2>
+  <div class="ui-tabgroup">
+    <input class="ui-tab1" type="radio" id="tgroup_a_tab1" name="tgroup_a" checked />
+    <input class="ui-tab2" type="radio" id="tgroup_a_tab2" name="tgroup_a" />
+    <input class="ui-tab3" type="radio" id="tgroup_a_tab3" name="tgroup_a" />
+    <div class="ui-tabs">
+      <label class="ui-tab1" for="tgroup_a_tab1"><i class="fa fa-check-square-o"></i>To do</label>
+      <label class="ui-tab2" for="tgroup_a_tab2"><i class="fa fa-puzzle-piece"></i>Features</label>
+      <label class="ui-tab3" for="tgroup_a_tab3"><i class="fa fa-info-circle"></i>Usage example</label>
+    </div>
+    <div class="ui-panels">
+      <div class="ui-tab1">
+        <h3>To do:</h3>
+        <ul>
+          <li>Verify accessibility. Problems / solutions?</li>
+          <li>Verify browser compatibility. Currently tested on:
+            <ul>
+              <li>Chrome 34 (Linux), Chrome 36 (Android/Windows).</li>
+              <li>Firefox 27, 29, 31 (Windows / Linux).</li>
+              <li>Internet Explorer 11.</li>
+              <li>Opera 12 (Windows).</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="ui-tab2">
+        <h3>Features:</h3>
+        <ul>
+          <li>No JavaScript required.</li>
+          <li>Flexible. Stretches with the surrounding space and the tab content.</li>
+          <li>Can handle multiple tabgroups and nested tabgroups.</li>
+          <li>Retains correct tab order, between tabs and content, as well as the surrounding.</li>
+          <li>Tabs can be navigated by using the arrow keys:   <ul>
+              <li>left / up - moves left / up.</li>
+              <li>right / down - moves right / down.</li>
+            </ul>
+          </li>
+          <li>Responsive. Switches between standard/left tabs and the stacked full width tabs, at a specified viewport width.</li>
+          <li>If there are many tabs or very long tab captions, in large screen mode the standard tabs break off in multiple rows if there is not enough of space. </li>
+        </ul>
+      </div>
+      <div class="ui-tab3">
+        <h3>Usage example</h3>
+        <pre>
+&lt;div class="ui-tabgroup"&gt;
+  &lt;input class="ui-tab1" type="radio" id="tgroup_a_tab1" name="tgroup_a" checked /&gt;
+  &lt;input class="ui-tab2" type="radio" id="tgroup_a_tab2" name="tgroup_a" /&gt;
+  &lt;input class="ui-tab3" type="radio" id="tgroup_a_tab3" name="tgroup_a" /&gt;
+  &lt;div class="ui-tabs"&gt;
+    &lt;label class="ui-tab1" for="tgroup_a_tab1"&gt;Caption 1&lt;/label&gt;
+    &lt;label class="ui-tab2" for="tgroup_a_tab2"&gt;Caption 2&lt;/label&gt;
+    &lt;label class="ui-tab3" for="tgroup_a_tab3"&gt;Caption 3&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-panels"&gt;
+    &lt;div class="ui-tab1"&gt;
+      &lt;h3&gt;Caption 1&lt;/h3&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-tab2"&gt;
+      &lt;h3&gt;Caption 2&lt;/h3&gt;
+      &lt;p&gt;Ut enim ad minim veniam.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-tab3"&gt;
+      &lt;h3&gt;Caption 3&lt;/h3&gt;
+      &lt;p&gt;Duis aute irure dolor.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+        <p>The radio buttons require a name for keeping the individual buttons together as a group. To use multiple tabgroups, the radio button name has to be unique per each tabgroup.</p>
+<p>Each radio button requires a unique id, that each corresponding label can connect to via the "for" attribute.</p>
+<p>Each radio button, label and panel require a numbered class "ui-tabX", where X can be 1 to 9. (The maximum of 9 can easily be extended.)</p>
+      </div>
+    </div>
+  </div>
+  <h2>Left side tabs</h2>
+  <div class="ui-tabgroup left-side icons-only">
+    <input class="ui-tab1" type="radio" id="tgroup_b_tab1" name="tgroup_b" checked />
+    <input class="ui-tab2" type="radio" id="tgroup_b_tab2" name="tgroup_b" />
+    <input class="ui-tab3" type="radio" id="tgroup_b_tab3" name="tgroup_b" />
+    <input class="ui-tab4" type="radio" id="tgroup_b_tab4" name="tgroup_b" />
+    <div class="ui-tabs">
+      <label class="ui-tab1" for="tgroup_b_tab1"><i class="fa fa-exchange"></i></label>
+      <label class="ui-tab2" for="tgroup_b_tab2"><i class="fa fa-sort-amount-asc"></i></label>
+      <label class="ui-tab3" for="tgroup_b_tab3"><i class="fa fa-caret-square-o-left"></i></label>
+      <label class="ui-tab4" for="tgroup_b_tab4"><i class="fa fa-strikethrough"></i></label>
+    </div>
+    <div class="ui-panels">
+      <div class="ui-tab1">
+        <div>
+          <div class="container-half">
+            <h3>Tab order</h3>
+            <p>Test it by navigating around using the tab key, shift tab, and the arrow keys.</p>
+            <ul>
+              <li><a href="#">Dummy link A</a></li>
+              <li><a href="#">Dummy link B</a></li>
+            </ul>
+          </div>
+          <div class="container-half">
+            <p>A couple of dummy buttons:<br /><button>Dummy A</button> <button>Dummy B</button></p>
+          </div>
+        </div>
+      </div>
+      <div class="ui-tab2">
+        <h3>Expands with content</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab3">
+        <h3>Left side tabs</h3>
+        <p>Just add the class "left-side" like so:<pre>&lt;div class="ui-tabgroup left-side"&gt;</pre></p>
+      </div>
+      <div class="ui-tab4">
+        <h3>Icons only</h3>
+        <p>For use in combination with left-tabs. Shrinks the tabs down to a width 50px. And due to the small space the tabs take, they are no longer adapted to smaller viewports.</p>
+        <p>(Currently only available in the Plum theme.)</p>
+        <p>Just add the class "icons-only" like so:<pre>&lt;div class="ui-tabgroup left-side icons-only"&gt;</pre></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container theme-lime">
+  <h2>Themed: theme-lime</h2>
+  <div class="ui-tabgroup">
+    <input class="ui-tab1" type="radio" id="tgroup_c_tab1" name="tgroup_c" checked />
+    <input class="ui-tab2" type="radio" id="tgroup_c_tab2" name="tgroup_c" />
+    <input class="ui-tab3" type="radio" id="tgroup_c_tab3" name="tgroup_c" />
+    <input class="ui-tab4" type="radio" id="tgroup_c_tab4" name="tgroup_c" />
+    <div class="ui-tabs">
+      <label class="ui-tab1" for="tgroup_c_tab1"><i class="fa fa-list"></i>Lime Lorem</label>
+      <label class="ui-tab2" for="tgroup_c_tab2"><i class="fa fa-cog"></i>Ipsum</label>
+      <label class="ui-tab3" for="tgroup_c_tab3"><i class="fa fa-rocket"></i>Dolor</label>
+      <label class="ui-tab4" for="tgroup_c_tab4"><i class="fa fa-cloud-upload"></i>Sit Amet</label>
+    </div>
+    <div class="ui-panels">
+      <div class="ui-tab1">
+        <h3>Lorem ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab2">
+        <h3>Duis aute</h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab3">
+        <h3>Not much here</h3>
+        <p>...</p>
+      </div>
+      <div class="ui-tab4">
+        <h3>Ut enim ad minim veniam</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+  <h2>Left side tabs</h2>
+  <div class="ui-tabgroup left-side">
+    <input class="ui-tab1" type="radio" id="tgroup_d_tab1" name="tgroup_d" checked />
+    <input class="ui-tab2" type="radio" id="tgroup_d_tab2" name="tgroup_d" />
+    <input class="ui-tab3" type="radio" id="tgroup_d_tab3" name="tgroup_d" />
+    <input class="ui-tab4" type="radio" id="tgroup_d_tab4" name="tgroup_d" />
+    <div class="ui-tabs">
+      <label class="ui-tab1" for="tgroup_d_tab1"><i class="fa fa-rocket"></i>Lime</label>
+      <label class="ui-tab2" for="tgroup_d_tab2"><i class="fa fa-cog"></i>Sit Amet</label>
+      <label class="ui-tab3" for="tgroup_d_tab3">Consectetur</label>
+      <label class="ui-tab4" for="tgroup_d_tab4">Adipisicing</label>
+    </div>
+    <div class="ui-panels">
+      <div class="ui-tab1">
+        <h3>Lorem ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab2">
+        <h3>Duis aute</h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab3">
+        <h3>Not much here</h3>
+        <p>...</p>
+      </div>
+      <div class="ui-tab4">
+        <h3>Ut enim ad minim veniam</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container theme-cactus">
+  <h2>Themed: theme-cactus</h2>
+  <div class="ui-tabgroup">
+    <input class="ui-tab1" type="radio" id="tgroup_c1_tab1" name="tgroup_c1" checked />
+    <input class="ui-tab2" type="radio" id="tgroup_c1_tab2" name="tgroup_c1" />
+    <input class="ui-tab3" type="radio" id="tgroup_c1_tab3" name="tgroup_c1" />
+    <input class="ui-tab4" type="radio" id="tgroup_c1_tab4" name="tgroup_c1" />
+    <div class="ui-tabs">
+      <label class="ui-tab1" for="tgroup_c1_tab1"><i class="fa fa-certificate"></i>Cactus Lorem</label>
+      <label class="ui-tab2" for="tgroup_c1_tab2"><i class="fa fa-list"></i>Ipsum</label>
+      <label class="ui-tab3" for="tgroup_c1_tab3"><i class="fa fa-rocket"></i>Dolor Sit Amet</label>
+      <label class="ui-tab4" for="tgroup_c1_tab4"><i class="fa fa-cloud-upload"></i>Consectetur</label>
+    </div>
+    <div class="ui-panels">
+      <div class="ui-tab1">
+        <h3>Lorem ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab2">
+        <h3>Duis aute</h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab3">
+        <h3>Not much here</h3>
+        <p>...</p>
+      </div>
+      <div class="ui-tab4">
+        <h3>Ut enim ad minim veniam</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+  <h2>Left side tabs</h2>
+  <div class="ui-tabgroup left-side">
+    <input class="ui-tab1" type="radio" id="tgroup_c2_tab1" name="tgroup_c2" checked />
+    <input class="ui-tab2" type="radio" id="tgroup_c2_tab2" name="tgroup_c2" />
+    <input class="ui-tab3" type="radio" id="tgroup_c2_tab3" name="tgroup_c2" />
+    <input class="ui-tab4" type="radio" id="tgroup_c2_tab4" name="tgroup_c2" />
+    <div class="ui-tabs">
+      <label class="ui-tab1" for="tgroup_c2_tab1"><i class="fa fa-list"></i>Aliqua</label>
+      <label class="ui-tab2" for="tgroup_c2_tab2"><i class="fa fa-rocket"></i>Proident</label>
+      <label class="ui-tab3" for="tgroup_c2_tab3"><i class="fa fa-cog"></i>Velit Esse</label>
+      <label class="ui-tab4" for="tgroup_c2_tab4"><i class="fa fa-cloud-upload"></i>Minim</label>
+    </div>
+    <div class="ui-panels">
+      <div class="ui-tab1">
+        <h3>Lorem ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab2">
+        <h3>Duis aute</h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab3">
+        <h3>Not much here</h3>
+        <p>...</p>
+      </div>
+      <div class="ui-tab4">
+        <h3>Ut enim ad minim veniam</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h2>Default theme / no theme</h2>
+  <div class="ui-tabgroup">
+    <input class="ui-tab1" type="radio" id="tgroup_f_tab1" name="tgroup_f" checked />
+    <input class="ui-tab2" type="radio" id="tgroup_f_tab2" name="tgroup_f" />
+    <input class="ui-tab3" type="radio" id="tgroup_f_tab3" name="tgroup_f" />
+    <div class="ui-tabs">
+      <label class="ui-tab1" for="tgroup_f_tab1"><i class="fa fa-rocket"></i>Tab 1</label>
+      <label class="ui-tab2" for="tgroup_f_tab2"><i class="fa fa-cog"></i>Tab 2</label>
+      <label class="ui-tab3" for="tgroup_f_tab3"><i class="fa fa-cloud-upload"></i>Tab 3</label>
+    </div>
+    <div class="ui-panels">
+      <div class="ui-tab1">
+        <h3>Lorem ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab2">
+        <h3>Duis aute</h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab3">
+        <h3>Not much here</h3>
+        <p>...</p>
+      </div>
+    </div>
+  </div>
+  <h2>Side tabs</h2>
+  <div class="ui-tabgroup left-side">
+    <input class="ui-tab1" type="radio" id="tgroup_e_tab1" name="tgroup_e" checked />
+    <input class="ui-tab2" type="radio" id="tgroup_e_tab2" name="tgroup_e" />
+    <input class="ui-tab3" type="radio" id="tgroup_e_tab3" name="tgroup_e" />
+    <input class="ui-tab4" type="radio" id="tgroup_e_tab4" name="tgroup_e" />
+    <input class="ui-tab5" type="radio" id="tgroup_e_tab5" name="tgroup_e" />
+    <div class="ui-tabs">
+      <label class="ui-tab1" for="tgroup_e_tab1"><i class="fa fa-list"></i>Tab 1</label>
+      <label class="ui-tab2" for="tgroup_e_tab2"><i class="fa fa-bolt"></i>Tab 2</label>
+      <label class="ui-tab3" for="tgroup_e_tab3"><i class="fa fa-cog"></i>Tab 3</label>
+      <label class="ui-tab4" for="tgroup_e_tab4"><i class="fa fa-sliders"></i>Tab 4</label>
+      <label class="ui-tab5" for="tgroup_e_tab5"><i class="fa fa-comments"></i>Tab 5</label>
+    </div>
+    <div class="ui-panels">
+      <div class="ui-tab1"><h3>Number 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab2"><h3>Number 2</h3>
+        <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquza. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab3"><h3>Number 3</h3>
+        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab4"><h3>Number 4</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="ui-tab5"><h3>Number 5</h3>
+        <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, <a href="#">a link</a>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container theme-plum">
+  <h2>Nesting</h2>
+  <div class="ui-tabgroup">
+    <input class="ui-tab1" type="radio" id="tgroup_a2_tab1" name="tgroup_a2" checked />
+    <input class="ui-tab2" type="radio" id="tgroup_a2_tab2" name="tgroup_a2" />
+    <div class="ui-tabs">
+      <label class="ui-tab1" for="tgroup_a2_tab1"><i class="fa fa-rocket"></i>Nested 1</label>
+      <label class="ui-tab2" for="tgroup_a2_tab2"><i class="fa fa-cloud-upload"></i>Nested 2</label>
+    </div>
+    <div class="ui-panels">
+      <div class="ui-tab1 theme-lime">
+
+        <h3>Nesting tabs</h3>
+        <div class="ui-tabgroup left-side">
+          <input class="ui-tab1" type="radio" id="tgroup_a2a_tab1" name="tgroup_a2a" checked />
+          <input class="ui-tab2" type="radio" id="tgroup_a2a_tab2" name="tgroup_a2a" />
+          <div class="ui-tabs">
+            <label class="ui-tab1" for="tgroup_a2a_tab1"><i class="fa fa-comments"></i>Lime 1</label>
+            <label class="ui-tab2" for="tgroup_a2a_tab2"><i class="fa fa-bolt"></i>Lime 2</label>
+          </div>
+          <div class="ui-panels">
+            <div class="ui-tab1">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+            <div class="ui-tab2">
+              <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="ui-tab2 theme-cactus">
+
+        <h3>Nesting tabs again</h3>
+        <div class="ui-tabgroup">
+          <input class="ui-tab1" type="radio" id="tgroup_a2b_tab1" name="tgroup_a2b" checked />
+          <input class="ui-tab2" type="radio" id="tgroup_a2b_tab2" name="tgroup_a2b" />
+          <div class="ui-tabs">
+            <label class="ui-tab1" for="tgroup_a2b_tab1"><i class="fa fa-cog"></i>Cactus 1</label>
+            <label class="ui-tab2" for="tgroup_a2b_tab2"><i class="fa fa-list"></i>Cactus 2</label>
+          </div>
+          <div class="ui-panels">
+            <div class="ui-tab1">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+            <div class="ui-tab2">
+              <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
